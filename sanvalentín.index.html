@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi San Valentín 💖</title>
+    <link rel="stylesheet" href="sanvalentin.css">
+</head>
+<body>
+
+    <!-- Contenedor de corazones -->
+    <div class="hearts-container"></div>
+
+    <div class="background">
+        <div class="closed-letter show">
+            <div class="card">
+                <p>Tienes un mensaje ✉️</p>
+                <button onclick="openLetter()">Abrir</button>
+            </div>
+        </div>
+
+        <div class="open-letter hidden">
+            <div class="message">
+                <div class="card">
+                <h2>Hola Dani 💖</h2>
+                <p>Desde que te conocí, cada día ha sido especial.</p>
+                <p>Gracias por compartir momentos inolvidables conmigo.</p>
+                <img src="img/tortuga-unscreen.gif" alt="Corazón flotante" class="gif">
+                <button onclick="showQuestion()">Continuar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="question hidden">
+            <div class="card">
+            <h2>¿Quieres ser mi San Valentín? 💘</h2>
+            <button onclick="showYes()">Sí 😍</button>
+            <button onclick="showNo()">No 🙃</button>
+        </div>
+       </div>
+
+        <div class="final-message hidden">
+            <div class="card">
+            <h2>¡Sabía que dirías que sí! 💖</h2>
+            <p>Eres lo mejor que me ha pasado. Te amo mucho. 💕</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="sanvalentin.js "></script>
+</body>
+</html>

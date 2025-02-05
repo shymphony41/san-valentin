@@ -1,0 +1,143 @@
+/* Reset de página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ffdde1;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Estructura principal */
+.background {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Secciones */
+.closed-letter, .open-letter, .question, .final-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;  /* Asegurar mismo tamaño para evitar saltos */
+    text-align: center;
+}
+
+/* Estilos para las tarjetas de texto */
+.card {
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Efecto de animación */
+.card:hover {
+    transform: scale(1.05); /* Hace que la tarjeta crezca un poco al pasar el mouse */
+}
+
+
+
+/* Botones */
+button {
+    background: #ff4b5c;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #ff1c3d;
+}
+
+/* Corregir la animación para evitar movimiento inesperado */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% + 20px));
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% - 20px));
+    }
+}
+
+/* Control de visibilidad */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeOutUp 0.5s ease-out;
+}
+
+/* GIF */
+.gif {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: -20px auto 0;
+}
+
+/* Animación de corazones flotantes */
+.hearts-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 500px;
+    animation: floatUp 4s infinite linear;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
