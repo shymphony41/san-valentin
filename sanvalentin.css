@@ -11,7 +11,7 @@ body {
     position: relative;
 }
 
-/* Estructura principal */
+/* Contenedor principal */
 .background {
     position: relative;
     text-align: center;
@@ -20,19 +20,20 @@ body {
 }
 
 /* Secciones */
-.closed-letter, .open-letter, .question, .final-message {
+.closed-letter, .open-letter, .question, .final-message, .no-message {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 320px;  /* Asegurar mismo tamaño para evitar saltos */
+    width: 320px;
     text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Estilos para las tarjetas de texto */
+/* Tarjetas */
 .card {
-    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
-    padding: 15px;
+    background: rgba(255, 255, 255, 0.92); /* Restaurado el fondo semi-transparente */
+    padding: 20px;  /* Espaciado más cómodo */
     margin: 10px 0;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -40,17 +41,15 @@ body {
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-/* Efecto de animación */
+/* Animación de entrada y salida restaurada */
 .card:hover {
-    transform: scale(1.05); /* Hace que la tarjeta crezca un poco al pasar el mouse */
+    transform: scale(1.05);
 }
-
-
 
 /* Botones */
 button {
     background: #ff4b5c;
-    color: rgb(255, 255, 255);
+    color: white;
     border: none;
     padding: 10px 15px;
     margin-top: 10px;
@@ -63,7 +62,7 @@ button:hover {
     background: #ff1c3d;
 }
 
-/* Corregir la animación para evitar movimiento inesperado */
+/* Restauración de las animaciones */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -86,16 +85,16 @@ button:hover {
     }
 }
 
-/* Control de visibilidad */
+/* Clases para controlar visibilidad y animación */
 .hidden {
     opacity: 0;
     visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
 }
 
 .show {
     opacity: 1;
     visibility: visible;
-    animation: fadeInUp 0.5s ease-out;
 }
 
 .hide {
@@ -109,7 +108,7 @@ button:hover {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: -20px auto 0;
+    margin: -10px auto 0;
 }
 
 /* Animación de corazones flotantes */
@@ -121,12 +120,13 @@ button:hover {
     left: 0;
     pointer-events: none;
     overflow: hidden;
+    z-index: -1; /* Mantener los corazones en el fondo */
 }
 
 .heart {
     position: absolute;
     color: red;
-    font-size: 500px;
+    font-size: 30px;
     animation: floatUp 4s infinite linear;
     opacity: 0.8;
 }
