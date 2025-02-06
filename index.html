@@ -14,7 +14,7 @@
     <div class="background">
         <div class="closed-letter show">
             <div class="card">
-                <p>Tienes un mensaje ✉️</p>
+                <h2>Tienes un mensaje ✉️</h2>
                 <button onclick="openLetter()">Abrir</button>
             </div>
         </div>
@@ -22,8 +22,8 @@
         <div class="open-letter hidden">
             <div class="message">
                 <div class="card">
-                <h2>Hola Dani 💖</h2>
-                <p>Desde que te conocí, cada día ha sido especial.</p>
+                <h2>Hola mi amor 💖</h2>
+                <p>Desde que te conocí, cada día ha sido especial. y me alegra mucho tenerte en mi vida</p>
                 <p>Gracias por compartir momentos inolvidables conmigo.</p>
                 <img src="img/tortuga-unscreen.gif" alt="Corazón flotante" class="gif">
                 <button onclick="showQuestion()">Continuar</button>
@@ -35,12 +35,22 @@
             <div class="card">
             <h2>¿Quieres ser mi San Valentín? 💘</h2>
             <button onclick="showYes()">Sí 😍</button>
-            <button onclick="showNo()">No 🙃</button>
+            <button onclick="showNo()">No 😕</button>
         </div>
        </div>
 
+       <div class="no-message hidden">
+        <div class="card">
+            <h2>Estas segura? 🥺</h2>
+            <p>Piensa en nuestro hijo 😿</p>
+            <button onclick="tryAgain()">Intentar de nuevo</button>
+        </div>
+       </div>
+    
+
         <div class="final-message hidden">
             <div class="card">
+                <img src="img/gatos-beso-unscreen.gif" alt="Corazón flotante" class="gif">
             <h2>¡Sabía que dirías que sí! 💖</h2>
             <p>Eres lo mejor que me ha pasado. Te amo mucho. 💕</p>
         </div>
