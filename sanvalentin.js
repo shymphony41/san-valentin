@@ -8,8 +8,12 @@ function changeSection(hideSelector, showSelector) {
     setTimeout(() => {
         hideElement.classList.add("hidden");
         hideElement.classList.remove("show");
+
         showElement.classList.remove("hidden");
-        showElement.classList.add("show");
+        setTimeout(() => {
+            showElement.classList.add("show");
+            showElement.classList.remove("hide"); // Asegurar que se vea bien
+        }, 10);
     }, 500);
 }
 
@@ -28,9 +32,14 @@ function showYes() {
     changeSection(".question", ".final-message");
 }
 
-// Función si dice que no (mensaje divertido)
+// Función si dice que no (muestra la tarjeta de "No puede ser 😱")
 function showNo() {
-    alert("¡No puedes decir que no! 😜 Inténtalo de nuevo.");
+    changeSection(".question", ".no-message");
+}
+
+// Función para regresar a la pregunta
+function tryAgain() {
+    changeSection(".no-message", ".question");
 }
 
 // Generar corazones flotantes
@@ -54,5 +63,5 @@ function createHeart() {
     }, randomDuration * 1000);
 }
 
-// Crear corazones cada 500ms
-setInterval(createHeart, 500);
+// Crear corazones cada 150ms
+setInterval(createHeart, 150);
